@@ -1,0 +1,197 @@
+  * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Arial', sans-serif;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+      background: linear-gradient(135deg, #00ff99, #ff00ff, #ff007f);
+      background-size: 300% 300%;
+      animation: gradient 8s ease infinite;
+      color: #fff;
+    }
+
+    @keyframes gradient {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .container {
+      width: 350px;
+      text-align: center;
+      background: rgba(0, 0, 0, 0.7);
+      border-radius: 15px;
+      padding: 20px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    }
+
+    .tabs {
+      display: flex;
+      justify-content: space-around;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #fff;
+    }
+
+    .tab {
+      cursor: pointer;
+      padding: 10px 20px;
+      border-bottom: 2px solid transparent;
+      transition: 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .tab.active {
+      border-bottom: 2px solid #1ABC9C;
+      color: #1ABC9C;
+    }
+
+    .tab::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background: #1ABC9C;
+      transition: width 0.3s ease, left 0.3s ease;
+    }
+
+    .tab:hover::after {
+      width: 100%;
+      left: 0;
+    }
+
+    .time-display {
+      font-size: 3rem;
+      letter-spacing: 5px;
+      margin-bottom: 20px;
+      color: #1ABC9C;
+      transition: transform 0.3s;
+    }
+
+    .time-display span {
+      display: inline-block;
+      transition: transform 0.3s;
+    }
+
+    .controls {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 10px;
+    }
+
+    button {
+      background: #1ABC9C;
+      color: #fff;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: transform 0.3s, background 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    button::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.2);
+      transition: transform 0.3s;
+      transform: translateX(-50%) scaleY(0);
+      border-radius: 5px;
+      z-index: 0;
+    }
+
+    button:hover {
+      background: #16A085;
+      transform: translateY(-5px);
+    }
+
+    button:hover::before {
+      transform: translateX(-50%) scaleY(1);
+    }
+
+    #timer-input {
+      width: 120px;
+      padding: 10px;
+      margin-bottom: 10px;
+      text-align: center;
+      border: none;
+      border-radius: 5px;
+      transition: background 0.3s, transform 0.3s;
+      font-size: 1.5rem;
+    }
+
+    #timer-input:focus {
+      background: rgba(255, 255, 255, 0.2);
+      transform: scale(1.05);
+    }
+
+    #timer {
+      display: none;
+    }
+
+    #clock {
+      display: none;
+    }
+
+    #stopwatch {
+      display: none;
+    }
+
+    .fade-in {
+      animation: fade-in 0.5s ease;
+    }
+
+    @keyframes fade-in {
+      from {
+        opacity: 0;
+        transform: scale(0.9);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    .animated-number {
+      animation: number-flip 0.5s ease;
+    }
+
+    @keyframes number-flip {
+      0% {
+        transform: rotateX(90deg);
+      }
+      100% {
+        transform: rotateX(0deg);
+      }
+    }
+
+    /* Theme Styles */
+    .theme-light {
+      background: #f0f0f0;
+      color: #333;
+    }
+
+    .theme-dark {
+      background: #2C3E50;
+      color: #fff;
+    }
+
+    .theme-neon {
+      background: linear-gradient(135deg, #00ff99, #ff00ff, #ff007f);
+      background-size: 300% 300%;
+    }
+  

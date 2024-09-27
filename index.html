@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clock, Stopwatch, Timer</title>
+  <link rel="stylesheet" href="style.css">
+  
+</head>
+<body>
+  <div class="container">
+    <div class="tabs">
+      <div class="tab active" onclick="switchTab('clock')">Clock</div>
+      <div class="tab" onclick="switchTab('stopwatch')">Stopwatch</div>
+      <div class="tab" onclick="switchTab('timer')">Timer</div>
+    </div>
+
+    <div id="clock" class="time-section fade-in">
+      <div class="time-display" id="current-time"></div>
+    </div>
+
+    <div id="stopwatch" class="time-section">
+      <div class="time-display" id="stopwatch-time">00:00:00</div>
+      <div class="controls">
+        <button onclick="startStopwatch()">Start</button>
+        <button onclick="stopStopwatch()">Stop</button>
+        <button onclick="resetStopwatch()">Reset</button>
+      </div>
+    </div>
+
+    <div id="timer" class="time-section">
+      <input type="number" id="timer-input" placeholder="Seconds" min="1">
+      <div class="time-display" id="timer-time">00:00:00</div>
+      <div class="controls">
+        <button onclick="startTimer()">Start</button>
+        <button onclick="resetTimer()">Reset</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js.js"></script>
+</body>
+</html>
